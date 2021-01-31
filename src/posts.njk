@@ -1,0 +1,17 @@
+---
+data: takeshape
+layout: layouts/base.njk
+---
+
+<div class="card-container">
+  {% for project in takeshape %}
+
+    <article>
+      <a href="/posts/{{project.slug}}/index.html">
+        <h3>{{ project.title }}</h3>
+        <span>{{ project._updatedAt }}}</span>
+        <p>{{ project.deck }}</p>
+      </a>
+    </article>
+  {% endfor %}
+</div>

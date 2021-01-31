@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "mount:_site": "mount dist --to /",
+    "mount:static": "mount src/static --to /",
+    "run:css": "postcss src/static/styles/**/[^_]*.css --dir dist/css --ext css",
+    "run:css::watch": "$1 --watch",
+    "run:eleventy": "eleventy",
+    "run:eleventy::watch": "$1 --watch"
+  },
+  "plugins": [
+    "@snowpack/plugin-dotenv",
+    "@snowpack/plugin-postcss",
+    ["snowpack-plugin-terser",
+      {
+        "terserOptions": {
+          "compress": {
+            "arguments": true,
+            "passes": 2,
+            "unsafe_arrows": true
+          }
+        }
+      }
+    ]
+  ],
+  "devOptions": {
+    "port": 8080,
+    "open": "none",
+    "bundle": true,
+    "out": "dist"
+  }
+}
