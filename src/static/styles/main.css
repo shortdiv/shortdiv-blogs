@@ -113,7 +113,7 @@ details {
   left: 0;
   height: 100vh;
   width: 100vw;
-  transition: transform 0.75s ease;
+  transition: transform 0.5s ease, opacity 0.25s ease-in-out;
 
   @media (min-width: 770px) {
     transition: none;
@@ -131,6 +131,11 @@ details[open] {
   .overlay {
     transform: translateY(0);
     opacity: 1;
+
+    @media (min-width: 770px) {
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
   }
   summary:after {
     content: '×';
@@ -294,7 +299,8 @@ article > button {
     padding-left: 0.5em;
   }
   summary {
-    display: none;
+    transform: translateY(-100px);
+    position: absolute;
   }
 }
 
