@@ -17,14 +17,16 @@ function handleDeviceChange(state) {
   if (state === 'open') {
     document.querySelector('details').removeAttribute('closed')
     document.querySelector('details').setAttribute('open', 'open')
+    document.querySelector('body').classList.remove('menu--is-open')
   } else {
     document.querySelector('details').removeAttribute('open')
-    document.querySelector('details').setAttribute('closed', 'closed') 
+    document.querySelector('details').setAttribute('closed', 'closed')
+    document.querySelector('body').classList.remove('menu--is-open') 
   }
 }
 
 details.addEventListener("toggle", function() {
-  if (details.open) {
+  if (details.open && window.innerWidth < 770) {
     document.querySelector('body').classList.add('menu--is-open')
   } else {
     document.querySelector('body').classList.remove('menu--is-open')

@@ -218,6 +218,10 @@ hr {
   font-family: var(--bodyFonts);
   line-height: 1.35em;
   margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  padding: 2.625rem 1.3125rem;
 }
 
 .content {
@@ -290,9 +294,6 @@ article > button {
 @media (min-width: 770px) {
   hr {
     display: block;
-  }
-  .content-body {
-    margin: 5em 7em 0 7em;
   }
   .menu > ul > li {
     display: inline-block;
