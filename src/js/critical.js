@@ -14,7 +14,7 @@ if(mq.matches) {
 
 
 function handleDeviceChange(state) {
-  if (state === 'open' && !details.open) {
+  if (state === 'open') {
     document.querySelector('details').removeAttribute('closed')
     document.querySelector('details').setAttribute('open', 'open')
   } else {
