@@ -1,0 +1,95 @@
+img {
+  clip-path: url(#svgClip);
+  width: 14em;
+  height: 14em;
+  object-fit: contain;
+  object-position: top left;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* svg styling */
+.bottom-img {
+  display: block;
+  max-width: 500px;
+  margin: auto;
+}
+
+.bottom-img svg {
+  width: 100%;
+}
+
+.hide-svg {
+  display: none;
+}
+
+#teacup {
+  transform: translate(20px, 54px);
+}
+
+#teacup path,
+circle,
+rect,
+polygon {
+  stroke-width: 0.4;
+  stroke: #3d3d3d;
+  stroke-miterlimit: 10;
+  fill: none;
+}
+
+#blob1 path {
+  fill: #70695d;
+  stroke: none;
+}
+
+#blob1 {
+  transform: translate(65px, 0px);
+}
+
+#blob2 path {
+  fill: #a27984;
+  stroke: none;
+}
+
+#blob2 {
+  transform: translate(0px, 50px);
+}
+
+#blob3 path {
+  fill: #a8a7d1;
+  stroke: none;
+}
+
+#blob3 {
+  transform: translate(95px, 90px);
+}
+
+.bio {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 250px 1fr 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.bio > * {
+  grid-column-end: 5;
+  grid-column-start: 1;
+}
+
+@media (min-width: 1400px) {
+  .bio > .avatar {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+
+  .bio > .text {
+    padding-top: 2em;
+    grid-area: 2 / 2 / 4 / 5;
+  }
+
+  .bio > .bottom-img {
+    padding-top: 2em;
+    grid-area: 3 / 4 / 4 / 6;
+  }
+}
