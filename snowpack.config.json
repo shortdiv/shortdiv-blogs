@@ -9,7 +9,14 @@
     [
       "@snowpack/plugin-run-script",
       {
-        "cmd": "eleventy && postcss src/styles/**/[^_]*.css --dir src/css --ext css",
+        "cmd": "postcss src/styles/**/[^_]*.css --dir src/css --ext css",
+        "watch": "$1 --watch"
+      }
+    ],
+    [
+      "@snowpack/plugin-run-script",
+      {
+        "cmd": "eleventy",
         "watch": "$1 --watch"
       }
     ],
